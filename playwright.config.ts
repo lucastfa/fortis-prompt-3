@@ -10,7 +10,10 @@ export default defineConfig({
     timeout: 5000
   },
   fullyParallel: true,
-  reporter: 'html',
+  reporter: [
+    ['line'],
+    ['allure-playwright']
+  ],
   use: {
     baseURL: 'https://www.random.org',
     browserName: 'chromium',
