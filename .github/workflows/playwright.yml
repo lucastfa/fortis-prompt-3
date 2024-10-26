@@ -33,7 +33,7 @@ jobs:
         retention-days: 20
 
     - name: Get Allure history
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
       if: always()
       continue-on-error: true
       with:
@@ -53,7 +53,7 @@ jobs:
 
     - name: Deploy report to Github Pages
       if: always()
-      uses: peaceiris/actions-gh-pages@v2
+      uses: peaceiris/actions-gh-pages@v4
       env:
         PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PUBLISH_BRANCH: gh-pages
