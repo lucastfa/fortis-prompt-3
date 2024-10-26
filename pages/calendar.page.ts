@@ -4,13 +4,13 @@ export class CalendarPage {
 
   page:Page
   numberOfDatesInput:Locator
-  getDatesButton:Locator
   startDaySelect:Locator
   startMonthSelect:Locator
   startYearSelect:Locator
   endDaySelect:Locator
   endMonthSelect:Locator
   endYearSelect:Locator
+  getDatesButton:Locator
 
   constructor(page:Page) {
     this.page = page
@@ -28,17 +28,21 @@ export class CalendarPage {
     await this.page.goto('/calendar-dates')
   }
 
-  async getDates(numberOfDates:string, startDate:string, endDate:string) {
+  async generateDates(numberOfDates:string, startDate:string, endDate:string) {
     await this.numberOfDatesInput.fill(numberOfDates)
 
-    const startDateSplit = startDate.split('-')
-    await this.startDaySelect.selectOption(startDateSplit[2])
-    await this.startMonthSelect.selectOption(startDateSplit[1])
+    const startDateSplit:string[] = startDate.split('-')
+    const formatedStartDay:string = parseInt(startDateSplit[2]).toString()
+    const formatedStartMonth:string = parseInt(startDateSplit[1]).toString()
+    await this.startDaySelect.selectOption(formatedStartDay)
+    await this.startMonthSelect.selectOption(formatedStartMonth)
     await this.startYearSelect.selectOption(startDateSplit[0])
 
-    const endDateSplit = endDate.split('-')
-    await this.endDaySelect.selectOption(endDateSplit[2])
-    await this.endMonthSelect.selectOption(endDateSplit[1])
+    const endDateSplit:string[] = endDate.split('-')
+    const formatedEndDay:string = parseInt(endDateSplit[2]).toString()
+    const formatedEndMonth:string = parseInt(endDateSplit[1]).toString()
+    await this.endDaySelect.selectOption(formatedEndDay)
+    await this.endMonthSelect.selectOption(formatedEndMonth)
     await this.endYearSelect.selectOption(endDateSplit[0])
 
     await this.getDatesButton.click()
