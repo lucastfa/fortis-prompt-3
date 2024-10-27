@@ -5,11 +5,11 @@ This repository contains the solution proposed to automate a test scenario from 
 ## How to Run
 In order to run the tests contained in this repository, clone it locally and then follow the steps:
 - Make sure you have NodeJS and Yarn installed (I strongly suggest installing NodeJS through Node Version Manager: https://github.com/nvm-sh/nvm)
-- In the root folder run `yarn install` and then `yarn playwright install --with-deps` to install the project dependencies
-- Run `yarn playwright test` to run the tests
-- In order to see the HTML report try `yarn playwright show-report`
-- Tests will run in a headless mode by default, in order to run the test in the headed mode run `yarn playwright test --headed`
-- In order to run with playwright UI runner try the `yarn playwright test --ui`
+- In the root folder run `yarn install` and then `yarn playwright:install:deps` to install the project dependencies
+- Run `yarn playwright:run` to run the tests
+- In order to see the HTML report try `yarn playwright:report`
+- Tests will run in a headless mode by default, in order to run the test in the headed mode run `yarn playwright:run:headed`
+- In order to run with playwright UI runner try the `yarn playwright:run:ui`
 
 ## CI
 It has been implemented a Github Action job in order to run the tests as part of the CI. The job is triggered automatically on every push to master.
