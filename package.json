@@ -2,9 +2,15 @@
   "name": "fortis-prompt-3",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "playwright:install:deps": "./node_modules/.bin/playwright install --with-deps",
+    "playwright:run": "./node_modules/.bin/playwright test",
+    "playwright:report": "./node_modules/.bin/playwright show-report",
+    "playwright:run:headed": "./node_modules/.bin/playwright test --headed",
+    "playwright:run:ui": "./node_modules/.bin/playwright test --ui"
+  },
   "keywords": [],
-  "author": "",
+  "author": "Lucas Avila",
   "license": "ISC",
   "description": "",
   "devDependencies": {
