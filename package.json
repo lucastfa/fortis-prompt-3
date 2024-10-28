@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "playwright:install:deps": "./node_modules/.bin/playwright install",
-    "playwright:run": "./node_modules/.bin/playwright test",
-    "playwright:report": "./node_modules/.bin/playwright show-report",
-    "playwright:run:headed": "./node_modules/.bin/playwright test --headed",
-    "playwright:run:ui": "./node_modules/.bin/playwright test --ui"
+    "playwright:install": "npx playwright install",
+    "playwright:run": "npx playwright test",
+    "playwright:report": "npx playwright show-report",
+    "playwright:run:headed": "npx playwright test --headed",
+    "playwright:run:ui": "npx playwright test --ui"
   },
   "keywords": [],
   "author": "Lucas Avila",
