@@ -32,19 +32,19 @@ export class CalendarPage {
     await this.numberOfDatesInput.fill(numberOfDates)
 
     const startDateSplit:string[] = startDate.split('-')
-    const formatedStartDay:string = parseInt(startDateSplit[2]).toString()
-    const formatedStartMonth:string = parseInt(startDateSplit[1]).toString()
-    await this.startDaySelect.selectOption(formatedStartDay)
-    await this.startMonthSelect.selectOption(formatedStartMonth)
+    await this.startDaySelect.selectOption(this.trimLeadingZeros(startDateSplit[2]))
+    await this.startMonthSelect.selectOption(this.trimLeadingZeros(startDateSplit[1]))
     await this.startYearSelect.selectOption(startDateSplit[0])
 
     const endDateSplit:string[] = endDate.split('-')
-    const formatedEndDay:string = parseInt(endDateSplit[2]).toString()
-    const formatedEndMonth:string = parseInt(endDateSplit[1]).toString()
-    await this.endDaySelect.selectOption(formatedEndDay)
-    await this.endMonthSelect.selectOption(formatedEndMonth)
+    await this.endDaySelect.selectOption(this.trimLeadingZeros(endDateSplit[2]))
+    await this.endMonthSelect.selectOption(this.trimLeadingZeros(endDateSplit[1]))
     await this.endYearSelect.selectOption(endDateSplit[0])
 
     await this.getDatesButton.click()
+  }
+
+  trimLeadingZeros(number:string) {
+    return parseInt(number).toString()
   }
 }
