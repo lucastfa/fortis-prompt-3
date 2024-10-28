@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "playwright:install:deps": "./node_modules/.bin/playwright install --with-deps",
+    "playwright:install:deps": "./node_modules/.bin/playwright install",
     "playwright:run": "./node_modules/.bin/playwright test",
     "playwright:report": "./node_modules/.bin/playwright show-report",
     "playwright:run:headed": "./node_modules/.bin/playwright test --headed",
