@@ -7,7 +7,8 @@
     "playwright:run": "npx playwright test",
     "playwright:report": "npx playwright show-report",
     "playwright:run:headed": "npx playwright test --headed",
-    "playwright:run:ui": "npx playwright test --ui"
+    "playwright:run:ui": "npx playwright test --ui",
+    "playwright:run:debug": "npx playwright test --debug"
   },
   "keywords": [],
   "author": "Lucas Avila",
